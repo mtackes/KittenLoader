@@ -85,12 +85,12 @@
                     </view>
                     <connections>
                         <outlet property="activitySpinner" destination="tix-r9-7ob" id="OaB-d0-m6r"/>
-                        <outlet property="colorBox" destination="oIm-8t-Gq2" id="8Ch-LR-EXz"/>
+                        <outlet property="backgroundColorBox" destination="oIm-8t-Gq2" id="VxZ-ee-MSp"/>
                         <outlet property="imageView" destination="gwL-TZ-8fy" id="Ze6-Lz-PQH"/>
                         <outlet property="kittenButton" destination="Zpf-w8-gC9" id="FBV-bL-LFW"/>
                         <outlet property="loadMethodToggle" destination="Rgs-z1-kca" id="4mm-Qf-ntb"/>
-                        <outletCollection property="boxSmall" destination="Nmz-e9-kgV" collectionClass="NSMutableArray" id="RAB-Zl-Yik"/>
-                        <outletCollection property="boxSmall" destination="qzW-HN-7vH" collectionClass="NSMutableArray" id="qJT-ct-Sgy"/>
+                        <outletCollection property="boxSizeSmall" destination="Nmz-e9-kgV" collectionClass="NSMutableArray" id="yjX-W8-HJP"/>
+                        <outletCollection property="boxSizeSmall" destination="qzW-HN-7vH" collectionClass="NSMutableArray" id="vaq-BN-2Ec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

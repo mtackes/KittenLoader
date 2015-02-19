@@ -12,8 +12,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var colorBox: UIView!
-    @IBOutlet var boxSmall: [NSLayoutConstraint]!
+    @IBOutlet weak var backgroundColorBox: UIView!
+    @IBOutlet var boxSizeSmall: [NSLayoutConstraint]!
     
     @IBOutlet weak var kittenButton: UIButton!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
@@ -32,9 +32,9 @@ class ViewController: UIViewController {
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        if boxSmall == nil { return .Default }
+        if boxSizeSmall == nil { return .Default }
         
-        let lightBackground = boxSmall[0].active
+        let lightBackground = boxSizeSmall[0].active
         
         if lightBackground {
             return .Default
@@ -60,26 +60,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func closeKitten() {
-        NSLayoutConstraint.activateConstraints(boxSmall)
+        NSLayoutConstraint.activateConstraints(boxSizeSmall)
         self.setNeedsStatusBarAppearanceUpdate()
         activitySpinner.stopAnimating()
         UIView.animateWithDuration(0.5) {
             self.activitySpinner.alpha = 0
             self.imageView.alpha = 0
             self.kittenButton.alpha = 1
-            self.colorBox.layoutIfNeeded()
+            self.backgroundColorBox.layoutIfNeeded()
         }
     }
     
     // MARK: - Loading Start/Stop Methods
     func loadingStartAnimation() {
-        NSLayoutConstraint.deactivateConstraints(boxSmall)
+        NSLayoutConstraint.deactivateConstraints(boxSizeSmall)
         self.setNeedsStatusBarAppearanceUpdate()
         activitySpinner.startAnimating()
         UIView.animateWithDuration(0.3) {
             self.kittenButton.alpha = 0
             self.activitySpinner.alpha = 1
-            self.colorBox.layoutIfNeeded()
+            self.backgroundColorBox.layoutIfNeeded()
         }
     }
     
