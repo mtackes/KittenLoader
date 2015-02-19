@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KittenLoader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,10 +15,90 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-8t-Gq2">
+                                <rect key="frame" x="250" y="282" width="100" height="35"/>
+                                <color key="backgroundColor" red="0.42738074059999998" green="0.62701845170000003" blue="0.99877375359999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Nmz-e9-kgV"/>
+                                    <constraint firstAttribute="width" constant="100" id="qzW-HN-7vH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpf-w8-gC9">
+                                <rect key="frame" x="250" y="283" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ndG-32-Y4M"/>
+                                    <constraint firstAttribute="height" constant="35" id="qGJ-Gt-Jh7"/>
+                                </constraints>
+                                <state key="normal" title="Kitten me!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchKitten:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Hn-o4-gnl"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tix-r9-7ob">
+                                <rect key="frame" x="281" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <imageView alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gwL-TZ-8fy">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" placeholder="YES" id="YQW-2x-Tvo"/>
+                                    <constraint firstAttribute="height" constant="200" placeholder="YES" id="fzn-Ia-NCQ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vSK-Lc-5Ji" appends="YES" id="VlZ-85-bng"/>
+                                </connections>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rgs-z1-kca">
+                                <rect key="frame" x="218" y="564" width="165" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Bad Load"/>
+                                    <segment title="Good Load"/>
+                                </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="oIm-8t-Gq2" secondAttribute="width" priority="999" id="19c-W4-Tif"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rgs-z1-kca" secondAttribute="bottom" constant="8" id="EVU-83-p5d"/>
+                            <constraint firstAttribute="centerY" secondItem="tix-r9-7ob" secondAttribute="centerY" id="EhG-c8-hWz"/>
+                            <constraint firstAttribute="centerX" secondItem="oIm-8t-Gq2" secondAttribute="centerX" id="Ema-5x-V9j"/>
+                            <constraint firstAttribute="centerX" secondItem="Rgs-z1-kca" secondAttribute="centerX" constant="-0.5" id="HNY-LF-0Ag"/>
+                            <constraint firstAttribute="centerY" secondItem="oIm-8t-Gq2" secondAttribute="centerY" id="QHg-ou-gFH"/>
+                            <constraint firstAttribute="centerX" secondItem="gwL-TZ-8fy" secondAttribute="centerX" id="TeL-uE-Nva"/>
+                            <constraint firstAttribute="centerX" secondItem="tix-r9-7ob" secondAttribute="centerX" id="U7g-6c-uYg"/>
+                            <constraint firstAttribute="centerY" secondItem="gwL-TZ-8fy" secondAttribute="centerY" id="Ydi-Cu-2ol"/>
+                            <constraint firstAttribute="height" secondItem="oIm-8t-Gq2" secondAttribute="height" priority="999" id="g4x-Vm-QoH"/>
+                            <constraint firstAttribute="centerY" secondItem="Zpf-w8-gC9" secondAttribute="centerY" id="i5U-v1-q1Q"/>
+                            <constraint firstAttribute="centerX" secondItem="Zpf-w8-gC9" secondAttribute="centerX" id="mbY-2Z-aQ3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activitySpinner" destination="tix-r9-7ob" id="OaB-d0-m6r"/>
+                        <outlet property="colorBox" destination="oIm-8t-Gq2" id="8Ch-LR-EXz"/>
+                        <outlet property="imageView" destination="gwL-TZ-8fy" id="Ze6-Lz-PQH"/>
+                        <outlet property="kittenButton" destination="Zpf-w8-gC9" id="FBV-bL-LFW"/>
+                        <outlet property="loadMethodToggle" destination="Rgs-z1-kca" id="4mm-Qf-ntb"/>
+                        <outletCollection property="boxSmall" destination="Nmz-e9-kgV" collectionClass="NSMutableArray" id="RAB-Zl-Yik"/>
+                        <outletCollection property="boxSmall" destination="qzW-HN-7vH" collectionClass="NSMutableArray" id="qJT-ct-Sgy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vSK-Lc-5Ji">
+                    <connections>
+                        <action selector="closeKitten" destination="BYZ-38-t0r" id="jre-xr-Xmu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
